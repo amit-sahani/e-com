@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter } from "react-router-dom";
+import Router from "./utils/Router";
+import ProductContext from "./contexts/ProductContext";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Auth0Provider
+        domain={process.env.REACT_APP_DOMAIN }
+        clientId={process.env.REACT_APP_CLIENT}
+        redirectUri={window.location.origin}
+      >
+        <ProductContext>
+          <BrowserRouter>
+            <Router />
+          </BrowserRouter>
+        </ProductContext>
+      </Auth0Provider>
     </div>
   );
 }
