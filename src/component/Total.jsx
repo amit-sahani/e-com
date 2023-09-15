@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 import { useContext } from 'react'
 import { ProdContext } from '../contexts/ProductContext'
