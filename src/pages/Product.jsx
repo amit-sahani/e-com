@@ -21,7 +21,7 @@ const Product = () => {
 
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [getProducts]);
 
   return (
     <div style={{ marginTop: "55px" }}>

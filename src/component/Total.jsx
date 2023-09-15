@@ -11,7 +11,7 @@ const Total = () => {
     const calculateTotal = () => {
         total.count = 0
         total.totalPrice = 0
-        Object.keys(cartProducts).map((key)=>{
+        Object.keys(cartProducts).forEach((key)=>{
             console.log(cartProducts[key].count + total.count)
             total.count = cartProducts[key].count + total.count
 
@@ -22,7 +22,7 @@ const Total = () => {
 
     useEffect(()=>{
         calculateTotal()
-    }, [cartProducts])
+    }, [cartProducts, calculateTotal])
     
   return (
     <div style={{display:'flex', justifyContent: 'space-between'}}>

@@ -12,7 +12,7 @@ const CartItem = ({ product }) => {
   const decrement = () => {
     if(cartProducts[id].count>0){
       cartProducts[id] = {...cartProducts[id], count:cartProducts[id].count - 1 }
-      if(cartProducts[id].count==0){
+      if(cartProducts[id].count===0){
         delete cartProducts[id]
         setCartProducts({...cartProducts})
       }else{setCartProducts({...cartProducts})}

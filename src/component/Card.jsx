@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { ProdContext } from "../contexts/ProductContext";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useNavigate, useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ product }) => {
   const { id, thumbnail, price, title } = product;
@@ -26,7 +26,7 @@ const Card = ({ product }) => {
     if(cartProducts[id]){
         setAdded(true)
     }
-  }, [])
+  }, [cartProducts, id])
 
   return (
     <div
