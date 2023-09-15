@@ -7,6 +7,7 @@ const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const getProducts = async () => {
     try {
       const res = await fetch(`https://dummyjson.com/products/${id}`);
@@ -21,7 +22,7 @@ const Product = () => {
 
   useEffect(() => {
     getProducts();
-  }, [getProducts]);
+  }, []);
 
   return (
     <div style={{ marginTop: "55px" }}>
